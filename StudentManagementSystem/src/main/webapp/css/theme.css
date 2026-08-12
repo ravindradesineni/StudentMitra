@@ -1,0 +1,595 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Color Palette (Landing Page / NotebookLM Aesthetic) */
+    --bg-base: #faf8f5;        /* Warm cream base */
+    --bg-card: #ffffff;        /* Pure white for containers/cards */
+    --color-primary: #1b3b32;   /* Deep sage green brand color */
+    --color-primary-hover: #264f43; /* Hover state brand color */
+    --color-primary-light: #e8efe9; /* Soft light sage background tint */
+    --color-accent: #c29453;    /* Antique gold accent */
+    --text-main: #2d312e;       /* Dark charcoal for high contrast text */
+    --text-muted: #5f6368;      /* Neutral grey for helper text */
+    --text-light: #ffffff;      /* White text */
+    --border-color: #e1deda;    /* Subtle borders */
+    --border-color-hover: #b5b1a9; /* Active/hover borders */
+    
+    /* Box Shadows & Border Radius */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 12px rgba(27, 59, 50, 0.03);
+    --shadow-hover: 0 6px 18px rgba(27, 59, 50, 0.06);
+    --border-radius: 12px;
+    --border-radius-sm: 8px;
+    
+    /* Semantic Colors */
+    --color-success-bg: #e8efe9;
+    --color-success-text: #1b3b32;
+    --color-success-border: #c2d5c7;
+    
+    --color-error-bg: #fcefed;
+    --color-error-text: #a23838;
+    --color-error-border: #f5cfca;
+    
+    --color-warning-bg: #fdf7e7;
+    --color-warning-text: #906c2a;
+    --color-warning-border: #f7e6c4;
+    
+    --color-info-bg: #f6f5f0;
+    --color-info-text: #2d312e;
+    --color-info-border: #e1deda;
+
+    --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ================= Global Core Elements ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-base) !important;
+    color: var(--text-main);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ================= Buttons Design System ================= */
+
+.btn, button, input[type="submit"], .portal-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-primary);
+    color: var(--text-light);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-sm);
+    outline: none;
+}
+
+.btn:hover, button:hover, input[type="submit"]:hover, .portal-btn:hover {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+    color: var(--text-light);
+}
+
+/* Secondary Button Mode */
+.btn-secondary, .portal-btn.secondary, .btn-guide, .btn-student, button.secondary {
+    background-color: var(--bg-card) !important;
+    color: var(--color-primary) !important;
+    border: 1px solid var(--color-primary) !important;
+}
+
+.btn-secondary:hover, .portal-btn.secondary:hover, .btn-guide:hover, .btn-student:hover, button.secondary:hover {
+    background-color: var(--color-primary-light) !important;
+    color: var(--color-primary) !important;
+}
+
+/* Danger Button (Delete actions) */
+.btn-danger, button.danger {
+    background-color: var(--color-error-text) !important;
+    border-color: var(--color-error-text) !important;
+    color: var(--text-light) !important;
+}
+
+.btn-danger:hover, button.danger:hover {
+    background-color: #882c2c !important;
+    border-color: #882c2c !important;
+}
+
+/* ================= Form Controls ================= */
+
+.input-group, .form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-main);
+    font-size: 14px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], select, textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    outline: none;
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    transition: var(--transition-smooth);
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="number"]:focus, input[type="date"]:focus, select:focus, textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(27, 59, 50, 0.1);
+}
+
+/* ================= Tables Design ================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+table th {
+    background-color: var(--color-primary);
+    color: var(--text-light);
+    font-weight: 600;
+    padding: 14px;
+    font-size: 14px;
+    text-align: center;
+    border: none;
+}
+
+table td {
+    padding: 12px 14px;
+    font-size: 13.5px;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+}
+
+table tr:nth-child(even) {
+    background-color: #faf9f6;
+}
+
+table tr:hover {
+    background-color: var(--color-primary-light) !important;
+}
+
+/* ================= Cards Design ================= */
+
+.card, .table-container, .table-box {
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--border-color-hover);
+}
+
+/* ================= Alert & Status Banners ================= */
+
+.success-message, .success, .alert-success {
+    background-color: var(--color-success-bg) !important;
+    color: var(--color-success-text) !important;
+    border: 1px solid var(--color-success-border) !important;
+    padding: 12px 16px;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.error-message, .error, .alert-danger, .alert-error {
+    background-color: var(--color-error-bg) !important;
+    color: var(--color-error-text) !important;
+    border: 1px solid var(--color-error-border) !important;
+    padding: 12px 16px;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.warning-message, .warning, .alert-warning {
+    background-color: var(--color-warning-bg) !important;
+    color: var(--color-warning-text) !important;
+    border: 1px solid var(--color-warning-border) !important;
+    padding: 12px 16px;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.info-message, .info, .alert-info {
+    background-color: var(--color-info-bg) !important;
+    color: var(--color-info-text) !important;
+    border: 1px solid var(--color-info-border) !important;
+    padding: 12px 16px;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* ================= Sidebars ================= */
+
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    background-color: var(--color-primary);
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 40px 18px;
+    box-shadow: 4px 0 25px rgba(27, 59, 50, 0.15);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+/* Scrollbar styles for modern scroll bars inside webkit browsers */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    transition: var(--transition-smooth);
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.sidebar h2 {
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 45px;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.sidebar h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar ul li {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-decoration: none;
+    border-radius: var(--border-radius-sm);
+    padding: 12px 18px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar ul li a i {
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+    opacity: 0.85;
+    transition: transform 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    color: var(--text-light) !important;
+    transform: translateX(4px);
+}
+
+.sidebar ul li a:hover i {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.sidebar ul li.active a {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    color: var(--text-light) !important;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar ul li.active a i {
+    opacity: 1;
+}
+
+/* ================= Sidebar Accordion Dropdown Styles ================= */
+.sidebar ul li.has-submenu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar ul li.has-submenu .submenu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sidebar ul li.has-submenu .arrow-icon {
+    font-size: 11px !important;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-left: auto;
+}
+
+.sidebar ul li.has-submenu.open .arrow-icon {
+    transform: rotate(90deg);
+}
+
+.sidebar ul li .submenu {
+    list-style: none;
+    padding-left: 15px;
+    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar ul li.has-submenu.open .submenu {
+    max-height: 200px;
+}
+
+.sidebar ul li .submenu-item a {
+    font-size: 13.5px !important;
+    padding: 8px 12px !important;
+    opacity: 0.8;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.sidebar ul li .submenu-item a:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.sidebar ul li .submenu-item.active a {
+    opacity: 1;
+    color: var(--text-light) !important;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    border-radius: var(--border-radius-sm);
+}
+
+.sidebar ul li.has-submenu.active > .submenu-toggle {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    color: var(--text-light) !important;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ================= Student Portal Sidebar Scrolling ================= */
+.sidebar.student-sidebar {
+    overflow-y: auto !important; /* Enable scrollbar on the main sidebar container */
+    overflow-x: hidden !important;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+/* Webkit scrollbar styles for the student sidebar */
+.sidebar.student-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar.student-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar.student-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    transition: var(--transition-smooth);
+}
+
+.sidebar.student-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+/* ================= Mobile Sidebar Toggle default state ================= */
+.sidebar-toggle {
+    display: none;
+}
+
+/* ================= Clean Media Queries Breakpoints ================= */
+
+/* 1. Large devices (Laptops/Desktops, max-width: 1200px) */
+@media (max-width: 1200px) {
+    .main {
+        padding: 30px;
+    }
+}
+
+/* 2. Medium devices (Tablets, max-width: 992px) */
+@media (max-width: 992px) {
+    .sidebar {
+        left: -240px;
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .sidebar.open {
+        left: 0 !important;
+    }
+    
+    .main {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 24px;
+        padding-top: 80px; /* Space for the toggle button */
+    }
+    
+    /* Toggle Hamburger Button */
+    .sidebar-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        width: 45px;
+        height: 45px;
+        background-color: var(--color-primary);
+        color: var(--text-light);
+        border: none;
+        border-radius: var(--border-radius-sm);
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(27, 59, 50, 0.15);
+        transition: var(--transition-smooth);
+    }
+    
+    .sidebar-toggle:hover {
+        background-color: var(--color-primary-hover);
+        transform: scale(1.05);
+    }
+    
+    /* Dashboard statistics stats grid column wraps */
+    .stats, .grid-info, .profile-container {
+        grid-template-columns: 1fr !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    
+    .profile-left, .profile-right {
+        width: 100% !important;
+    }
+}
+
+/* 3. Small devices (Phones, max-width: 768px) */
+@media (max-width: 768px) {
+    .top-bar, .header, .actions {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 15px !important;
+    }
+    
+    .right-header {
+        width: 100% !important;
+        justify-content: space-between !important;
+        margin-top: 10px !important;
+    }
+    
+    .actions input, .actions select {
+        width: 100% !important;
+    }
+    
+    .actions button, .actions a {
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
+    .table-box, .table-container {
+        padding: 15px !important;
+        overflow-x: auto !important;
+    }
+    
+    table {
+        min-width: 600px !important; /* Force overflow scroll instead of clipping text */
+    }
+    
+    .form-row, .grid-2-col {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* 4. Extra small devices (Small phones, max-width: 576px) */
+@media (max-width: 576px) {
+    .main {
+        padding: 16px;
+        padding-top: 80px;
+    }
+    
+    .card, .table-box {
+        padding: 20px !important;
+    }
+    
+    .top-bar h1, .header h1 {
+        font-size: 28px !important;
+    }
+}
+
+/* 5. Tiny screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100% !important;
+        left: -100%;
+    }
+    
+    .sidebar-toggle {
+        top: 10px;
+        left: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+

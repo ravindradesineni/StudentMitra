@@ -1,0 +1,48 @@
+@import url('theme.css');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 450px;
+}
+
+.logo {
+    width: 90px;
+    height: 90px;
+    margin: auto;
+    border-radius: 50%;
+    background: var(--color-primary-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.logo i {
+    font-size: 40px;
+    color: var(--color-primary);
+}
+
+h2 {
+    font-size: 32px;
+    color: var(--text-main);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+p {
+    color: var(--text-muted);
+    margin-bottom: 35px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.portal-btn {
+    width: 100%;
+    margin-top: 18px;
+}

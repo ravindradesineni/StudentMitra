@@ -1,0 +1,76 @@
+@import url('theme.css');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.signup-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.signup-card {
+    width: 500px;
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    padding: 45px;
+    box-shadow: var(--shadow-sm);
+}
+
+.logo {
+    width: 85px;
+    height: 85px;
+    background: var(--color-primary-light);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+}
+
+.logo i {
+    font-size: 38px;
+    color: var(--color-primary);
+}
+
+.signup-card h2 {
+    text-align: center;
+    color: var(--text-main);
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.signup-card p {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 35px;
+}
+
+.signup-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.bottom-text {
+    margin-top: 25px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.bottom-text a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.bottom-text a:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+}
